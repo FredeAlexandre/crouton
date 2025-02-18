@@ -5,13 +5,15 @@
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "vinxi start",
+    "knip": "knip"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
+    "knip": "^5.44.1",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "peerDependencies": {
