@@ -2,39 +2,35 @@ import { Link } from "@tanstack/react-router";
 
 import { Button } from "~/components/ui/button";
 
-import { HomeIcon } from "lucide-react";
+import { CalendarDays, ChefHat, Settings, ShoppingBasket, Sparkles } from "lucide-react";
+import { cn } from "~/lib/utils";
 
 export function BottomMenu() {
   return (
-    <div className="absolute bottom-0 border-t w-full flex justify-center items-center bg-background h-20 grid grid-cols-5">
+    <div className="absolute bottom-0 border-t w-full flex justify-center items-center bg-background h-18 grid grid-cols-5">
       <Button asChild variant="ghost" className="w-full h-full rounded-none">
-        <Link to="/" className="block flex flex-col items-center gap-1">
-          <HomeIcon className="size-6" />
-          <span className="text-xs">Menus</span>
+        <Link to="/menus" className="block flex flex-col items-center gap-1">
+          {({ isActive }) => <CalendarDays className={cn("size-6 text-muted-foreground", isActive && "text-primary")} />}
         </Link>
       </Button>
       <Button asChild variant="ghost" className="w-full h-full rounded-none">
         <Link to="/" className="block flex flex-col items-center gap-1">
-          <HomeIcon className="size-6" />
-          <span className="text-xs">Recettes</span>
+          {({ isActive }) => <ChefHat className={cn("size-6 text-muted-foreground", isActive && "text-primary")} />}
         </Link>
       </Button>
       <Button asChild variant="ghost" className="w-full h-full rounded-none">
-        <Link to="/" className="block flex flex-col items-center gap-1">
-          <HomeIcon className="size-6" />
-          <span className="text-xs">Liste de courses</span>
+        <Link to="/grocery-list" className="block flex flex-col items-center gap-1">
+          {({ isActive }) => <ShoppingBasket className={cn("size-6 text-muted-foreground", isActive && "text-primary")} />}
         </Link>
       </Button>
       <Button asChild variant="ghost" className="w-full h-full rounded-none">
-        <Link to="/" className="block flex flex-col items-center gap-1">
-          <HomeIcon className="size-6" />
-          <span className="text-xs">Decouvrez</span>
+        <Link to="/explore" className="block flex flex-col items-center gap-1">
+          {({ isActive }) => <Sparkles className={cn("size-6 text-muted-foreground", isActive && "text-primary")} />}
         </Link>
       </Button>
       <Button asChild variant="ghost" className="w-full h-full rounded-none">
-        <Link to="/" className="block flex flex-col items-center gap-1">
-          <HomeIcon className="size-6" />
-          <span className="text-xs">Parametres</span>
+        <Link to="/settings" className="block flex flex-col items-center gap-1">
+          {({ isActive }) => <Settings className={cn("size-6 text-muted-foreground", isActive && "text-primary")} />}
         </Link>
       </Button>
     </div>
