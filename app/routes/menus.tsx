@@ -1,9 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
+import Menus from '~/features/menus'
 
 export const Route = createFileRoute('/menus')({
-  component: RouteComponent,
+  component: Menus,
 })
-
-function RouteComponent() {
-  return <div>Hello "/menus"!</div>
-}
